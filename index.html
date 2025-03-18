@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #cl{
+        display: block;
+        text-align: center;
+        font-size: 10em;
+        font-family: Helvetica, sans-serif;
+    }
+
+    #contain{
+        text-align: center;
+    }
+
+    .button{
+        padding: 10px 20px;
+        font-size: 1.5em;
+        color: white;
+        background-color: hsl(234, 100%, 74%);
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.25s;
+    }
+
+    .button:hover{
+        background-color: hsl(214, 100%, 56%);
+    }
+</style>
+<body>
+    <label id="cl">0</label><br>
+    <div id="contain">    
+        <button id="dec" class="button">Decrease</button>
+        <button id="reset" class="button">Reset</button>
+        <button id="inc" class="button">Increase</button>
+    </div>
+    
+    <script>
+        const decreasebtn = document.getElementById("dec");
+        const resetbtn = document.getElementById("reset");
+        const increasebtn = document.getElementById("inc");
+        const countlabel = document.getElementById("cl");
+        let c=0;
+
+        increasebtn.onclick = function(){
+            c++;
+            countlabel.textContent = c;
+        }
+
+        resetbtn.onclick = function(){
+            c=0;
+            countlabel.textContent = c;
+        }
+
+        decreasebtn.onclick = function(){
+            c--;
+            countlabel.textContent = c;
+        }
+    </script>
+</body>
+</html>
